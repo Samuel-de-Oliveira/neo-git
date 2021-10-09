@@ -6,4 +6,8 @@ case $1 in "neopush")
 	git add .
 	git commit -m "$2"
 	git push
+	exit 1
 esac
+
+git $*
+
