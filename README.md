@@ -1,2 +1,2 @@
 # neo-git
-is like git, but upgrded
+is like git, but upgraded.
