@@ -2,6 +2,8 @@
 
 cmd=$1
 
-if [ "$cmd" == "Olá, mundo!" ]; then
-	echo 'Adeus, mundo!'
-fi
+case $1 in "neopush")
+	git add .
+	git commit -m "$2"
+	git push
+esac
