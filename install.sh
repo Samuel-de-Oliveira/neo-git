@@ -9,7 +9,7 @@ if [ $cmd == 'y' ] || [ $cmd == 'Y' ]; then
 	echo -e "The program is installing!\n"
 
 	echo "Moving the main file to /usr/bin/"
-	sudo cp ngit.sh /usr/bin/ngit
+	sudo cp neo-git.sh /usr/bin/ngit
 	
 	echo -e "\nThe installing is terminated!"
 	echo "Press return to exit..."; read
