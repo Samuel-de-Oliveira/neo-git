@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
-case $1 in "push")
-	git add .
-	git commit -m "$2"
+neo-push()
+{	git add .
+	git commit -m "$1"
 	git push
-	exit 1
-;;
+}
+
+case $1 in 
+	
+	"--push") neo-push "$2";;
+	"-p") neo-push "$2";;
+
 "create")
 	echo "creating directory..."
 	mkdir $2
@@ -17,8 +22,10 @@ case $1 in "push")
 	git remote add origin "$3"
 	git commit -m "Creation commit"
 	git push -u origin main
-	exit 1
-;;
+	;;
+
+*)
+	echo -e "\nUps... Maybe you digit something wrong.\nDigit --help for help."
+	;;
 esac
 
-git $*
