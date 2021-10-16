@@ -2,7 +2,7 @@
 
 clear
 echo "Neo-git version 1.0"
-echo "Are you sure you want to install? [Y/n]"; read cmd
+echo -e "Estimated space used: 2KB\nAre you sure you want to install? [Y/n]"; read cmd
 clear
 
 if [ $cmd == 'y' ] || [ $cmd == 'Y' ]; then
@@ -22,8 +22,7 @@ if [ $cmd == 'y' ] || [ $cmd == 'Y' ]; then
 	sudo cp neo-git.sh /usr/bin/ngit
 	
 	echo -e "\nThe installing is terminated!"
-	echo "Press return to exit..."; read
-
+	echo -e "\033[34;1mPress return to exit...\033[m"; read
 	clear
 else
 	echo "abort!"	

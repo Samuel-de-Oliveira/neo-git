@@ -11,7 +11,7 @@ procediments (On linux):
 	cd neo-git
 	sudo ./install.sh
 
-To use you just need make this `ngit [--command] ...` in terminal	
+To use you just need to write this in terminal: `ngit [--command] ...`.
 
 #### to see command list enter `ngit -h` in your terminal
 *<strong>Created by:</strong> Samuel de Oliveira 2021*
