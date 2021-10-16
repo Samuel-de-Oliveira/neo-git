@@ -26,9 +26,9 @@ commit()
 halp()
 {	echo -e "\nCommand: nvim [--parameter] ...\nThis is the list of parameters from neo-vim:\n"
 
-	echo -e "\t--push or -p >>: commit and push the repository in a command (nvim --push '(commit name...)');"
-	echo -e "\t--commit or -c >>: Just commit the repository in a command (nvim --commit '(commit name...)');"
-	echo -e "\t--help or -h >>: show the help message (nvim --help).\n"
+	echo -e "\t \033[34;1m--push or -p \033[m>>: commit and push the repository in a command (nvim --push '(commit name...)');"
+	echo -e "\t \033[34;1m--commit or -c \033[m>>: Just commit the repository in a command (nvim --commit '(commit name...)');"
+	echo -e "\t \033[34;1m--help or -h \033[m>>: show the help message (nvim --help).\n"
 }
 case $1 in 
 	
@@ -42,5 +42,5 @@ case $1 in
 "--help") halp;;
 "-h") halp;;
 
-*)echo -e "\nUps... Maybe you digit something wrong.\nDigit --help for help.\n";;
+*)echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit --help for help.\n";;
 esac
