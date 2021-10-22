@@ -30,7 +30,10 @@ halp()
 	echo -e "\t \033[34;1m--commit or -c \033[m>>: Just commit the repository in a command (nvim --commit '(commit name...)');"
 	echo -e "\t \033[34;1m--help or -h \033[m>>: show the help message (nvim --help).\n"
 }
-case $1 in 
+version()
+{	echo -e "\nNeoGit version: 1.0\nhave no warranty.\n"
+}
+case $1 in
 	
 "--push") push "$2";;
 "-p") push "$2";;
@@ -41,6 +44,9 @@ case $1 in
 # I have used "halp" because the command "help" is reserved.
 "--help") halp;;
 "-h") halp;;
+
+"--version") version;;
+"-v") version;;
 
 *)echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit --help for help.\n";;
 esac
