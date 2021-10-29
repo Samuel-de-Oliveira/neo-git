@@ -33,6 +33,12 @@ halp()
 version()
 {	echo -e "\nNeoGit version: 1.0\nhave no warranty.\n"
 }
+
+if [ $# -eq 0 ]; then
+	halp
+	exit 1
+fi
+
 case $1 in
 	
 "--push") push "$2";;
