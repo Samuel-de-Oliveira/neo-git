@@ -60,15 +60,15 @@ fi
 # Parameters:
 case $1 in
 	
-"--push" | "-p") push "$2";;
+"--push" | "-p") shift; push $*;;
 
-"--commit" | "-c") commit "$2";;
+"--commit" | "-c") shift; commit $*;;
 
 "--help" | "-h") halp;; # I have created "halp" because the command "help" is reserved.
 
 "--version" | "-v") version;;
 
-"--create" | "-C") create "$2";;
+"--create" | "-C") shift; create $*;;
 
 *) echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit \"ngit --help\" for help.\n";;
 
