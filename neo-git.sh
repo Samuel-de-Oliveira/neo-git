@@ -18,18 +18,18 @@
 # Here are all functions who is used in parameters.
 push()
 {	if [ $# -eq 0 ]; then
-		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
+	echo -e $# 
 	git add .
 	git commit -m "$1"
 	git push
 }
 commit()
 {	if [ $# -eq 0 ]; then
-		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
+	echo -e $#
 	git add .
 	git commit -m "$1"
 }
