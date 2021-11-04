@@ -14,22 +14,21 @@
 #						#
 #--*-----------------------------------------*--#
 
-
 # Here are all functions who is used in parameters.
 push()
 {	if [ $# -eq 0 ]; then
+		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
-	echo -e $# 
 	git add .
 	git commit -m "$1"
 	git push
 }
 commit()
 {	if [ $# -eq 0 ]; then
+		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
-	echo -e $#
 	git add .
 	git commit -m "$1"
 }
@@ -38,7 +37,7 @@ create()
 		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
-	echo "Hello!"
+	
 }
 halp()
 {	echo -e "\nCommand: nvim [--parameter] ...\nThis is the list of parameters from neo-vim:\n"
@@ -51,7 +50,7 @@ version()
 {	echo -e "\nNeoGit version: \033[33;1m1.1\033[m\nhave no warranty.\n"
 }
 
-# If the user digit nothing, will show the help message.
+# If the user digit nothing more, will show the help message.
 if [ $# -eq 0 ]; then
 	halp
 	exit 1
@@ -64,7 +63,7 @@ case $1 in
 
 "--commit" | "-c") shift; commit $*;;
 
-"--help" | "-h") halp;; # I have created "halp" because the command "help" is reserved.
+"--help" | "-h") halp;; # I've created "halp" because the command "help" is reserved.
 
 "--version" | "-v") version;;
 
