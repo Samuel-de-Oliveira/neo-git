@@ -17,7 +17,7 @@
 
 # Here are all functions who is used in parameters.
 push()
-{	if [ $# == 0 ]; then
+{	if [ $# -eq 0 ]; then
 		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
@@ -26,7 +26,7 @@ push()
 	git push
 }
 commit()
-{	if [ $# == 0 ]; then
+{	if [ $# -eq 0 ]; then
 		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
@@ -34,7 +34,7 @@ commit()
 	git commit -m "$1"
 }
 create()
-{	if [ $# == 0 ]; then
+{	if [ $# -eq 0 ]; then
 		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
@@ -52,7 +52,7 @@ version()
 }
 
 # If the user digit nothing, will show the help message.
-if [ $# == 0 ]; then
+if [ $# -eq 0 ]; then
 	halp
 	exit 1
 fi
@@ -68,7 +68,7 @@ case $1 in
 
 "--version" | "-v") version;;
 
-"--create" | "-C") create;;
+"--create" | "-C") create "$2";;
 
 *) echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit \"ngit --help\" for help.\n";;
 
