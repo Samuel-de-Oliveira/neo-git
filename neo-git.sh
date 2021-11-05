@@ -32,18 +32,22 @@ commit()
 	git add .
 	git commit -m "$1"
 }
-create()
+github()
 {	if [ $# -eq 0 ]; then
 		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
 	
+	git clone "https://github.com/$1/$2"
+	echo -e "Everything is done"
 }
 halp()
 {	echo -e "\nCommand: nvim [--parameter] ...\nThis is the list of parameters from neo-vim:\n"
 
 	echo -e "\t \033[34;1m--push or -p \033[m>>: Commit and push the repository in a command (nvim --push '(commit name...)');"
 	echo -e "\t \033[34;1m--commit or -c \033[m>>: Just commit the repository in a command (nvim --commit '(commit name...)');"
+	echo -e "\t \033[34;1m--github or -G \033[m>>: Clone a repository from Github (nvim --github (username...) (repository...))."
+	echo -e "\t \033[34;1m--version or -v \033{m>>: Show version (nvin --version)"
 	echo -e "\t \033[34;1m--help or -h \033[m>>: Show the help message (nvim --help).\n"
 }
 version()
@@ -67,7 +71,7 @@ case $1 in
 
 "--version" | "-v") version;;
 
-"--create" | "-C") shift; create $*;;
+"--github" | "-G") shift; github $*;;
 
 *) echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit \"ngit --help\" for help.\n";;
 
