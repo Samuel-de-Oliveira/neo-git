@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 clear
-echo "Neo-git version 1.0"
+echo "Neo-git version 1.1"
 echo -e "Estimated space used: 2KB\nAre you sure you want to install? [Y/n]"; read cmd
 clear
 
@@ -10,11 +10,13 @@ if [ $cmd == 'y' ] || [ $cmd == 'Y' ]; then
 	echo -e "The program is installing!\n"
 	
 	if [ ! -f /usr/bin/git ]; then
-		echo "Installing git"
+		echo -e "\033[31;1mGit not found\033[m, Installing git..."
 		if [ -f /etc/debian_version ]; then
 			sudo apt install git -y
-		elif [ -f /etc/arch_version ]; then
+		elif [ -f /etc/arch-release ]; then
 			sudo pacman -Syy git
+		elif [ -f /etc/gentoo-release ]; then
+			sudo emerge --sync dev-vcs/git
 		fi
 	fi
 
