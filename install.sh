@@ -10,14 +10,9 @@ if [ $cmd == 'y' ] || [ $cmd == 'Y' ]; then
 	echo -e "The program is installing!\n"
 	
 	if [ ! -f /usr/bin/git ]; then
-		echo -e "\033[31;1mGit not found\033[m, Installing git..."
-		if [ -f /etc/debian_version ]; then
-			sudo apt install git -y
-		elif [ -f /etc/arch-release ]; then
-			sudo pacman -Syy git
-		elif [ -f /etc/gentoo-release ]; then
-			sudo emerge --sync dev-vcs/git
-		fi
+		echo -e "\033[31;1mGit not found\033[m, Please install it..."
+		echo -e "\033[34;1mPress return to exit...\033[m"; read
+		exit 1
 	fi
 
 	echo "Moving the main file to /usr/bin/"

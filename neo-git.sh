@@ -15,6 +15,12 @@
 #--*-----------------------------------------*--#
 
 # Here are all functions who is used in parameters.
+
+if [ ! -f /usr/bin/git ]; then
+	echo -e "\n\033[31;1mThe git is not found\033[m, please install it to plugin works correctly"
+	exit 1
+fi
+
 push()
 {	if [ $# -eq 0 ]; then
 		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
