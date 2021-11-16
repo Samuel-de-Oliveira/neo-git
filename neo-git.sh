@@ -14,13 +14,13 @@
 #						#
 #--*-----------------------------------------*--#
 
-# Here are all functions who is used in parameters.
-
+# Chec if git is installed.
 if [ ! -f /usr/bin/git ]; then
 	echo -e "\n\033[31;1mThe git is not found\033[m, please install it to plugin works correctly"
 	exit 1
 fi
 
+# Here are all functions who is used in parameters.
 push()
 {	if [ $# -eq 0 ]; then
 		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
@@ -44,7 +44,7 @@ github()
 		exit 1
 	fi
 	
-	git clone "https://github.com/$1/$2"
+	git clone "https://github.com/$1/$2.git"
 	echo -e "Everything is done"
 }
 halp()
@@ -52,7 +52,7 @@ halp()
 
 	echo -e "\t \033[34;1m--push or -p \033[m>>: Commit and push the repository in a command (nvim --push '(commit name...)');"
 	echo -e "\t \033[34;1m--commit or -c \033[m>>: Just commit the repository in a command (nvim --commit '(commit name...)');"
-	echo -e "\t \033[34;1m--github or -G \033[m>>: Clone a repository from Github (nvim --github (username...) (repository...))."
+	echo -e "\t \033[34;1m--github or -H \033[m>>: Clone a repository from Github (nvim --github (username...) (repository...))."
 	echo -e "\t \033[34;1m--version or -v \033{m>>: Show version (nvin --version)"
 	echo -e "\t \033[34;1m--help or -h \033[m>>: Show the help message (nvim --help).\n"
 }
@@ -66,6 +66,7 @@ if [ $# -eq 0 ]; then
 	exit 1
 fi
 
+
 # Parameters:
 case $1 in
 	
@@ -77,7 +78,7 @@ case $1 in
 
 "--version" | "-v") version;;
 
-"--github" | "-G") shift; github $*;;
+"--github" | "-H") shift; github $*;;
 
 *) echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit \"ngit --help\" for help.\n";;
 
