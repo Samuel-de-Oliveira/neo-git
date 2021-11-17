@@ -14,7 +14,7 @@
 #						#
 #--*-----------------------------------------*--#
 
-# Chec if git is installed.
+# Check if git is installed.
 if [ ! -f /usr/bin/git ]; then
 	echo -e "\n\033[31;1mThe git is not found\033[m, please install it to plugin works correctly"
 	exit 1
@@ -45,7 +45,16 @@ github()
 	fi
 	
 	git clone "https://github.com/$1/$2.git"
-	echo -e "Everything is done"
+	echo -e "Everything is done!"
+}
+gitlab(){
+	if [ $# -eq 0 ]; then
+		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
+
+	git clone "https://gitlab.com/$1/$2.git"
+	echo -e "Everything is done!"
 }
 halp()
 {	echo -e "\nCommand: nvim [--parameter] ...\nThis is the list of parameters from neo-vim:\n"
@@ -66,7 +75,6 @@ if [ $# -eq 0 ]; then
 	exit 1
 fi
 
-
 # Parameters:
 case $1 in
 	
@@ -79,6 +87,8 @@ case $1 in
 "--version" | "-v") version;;
 
 "--github" | "-H") shift; github $*;;
+
+"--gitlab" | "-L") shift; gitlab $*;;
 
 *) echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit \"ngit --help\" for help.\n";;
 
