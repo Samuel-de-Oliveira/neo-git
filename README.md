@@ -11,6 +11,13 @@ procediments (On linux):
 	cd neo-git
 	sudo ./install.sh
 
+or you can download from this table:
+
+| System | File |
+|--------|------|
+|All Linux systems|[tar.xz]()|
+
+
 To use you just need to write this in terminal: `ngit [--command] ...`.
 
 #### to see command list enter `ngit -h` in your terminal
