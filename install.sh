@@ -9,6 +9,7 @@ if [ $cmd == 'y' ] || [ $cmd == 'Y' ]; then
 
 	echo -e "The program is installing!\n"
 	
+	echo -e "Check if the Git is intalled..."
 	if [ ! -f /usr/bin/git ]; then
 		echo -e "\033[31;1mGit not found\033[m, Please install it..."
 		echo -e "\033[34;1mPress return to exit...\033[m"; read

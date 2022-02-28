@@ -78,17 +78,17 @@ fi
 # Parameters:
 case $1 in
 	
-"--push" | "-p") shift; push $*;;
+"--push" | "-p") shift; push $@;;
 
-"--commit" | "-c") shift; commit $*;;
+"--commit" | "-c") shift; commit $@;;
 
 "--help" | "-h") halp;; # I've created "halp" because the command "help" is reserved.
 
 "--version" | "-v") version;;
 
-"--github" | "-H") shift; github $*;;
+"--github" | "-H") shift; github $@;;
 
-"--gitlab" | "-L") shift; gitlab $*;;
+"--gitlab" | "-L") shift; gitlab $@;;
 
 *) echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit \"ngit --help\" for help.\n";;
 
