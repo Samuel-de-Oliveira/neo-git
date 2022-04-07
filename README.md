@@ -5,19 +5,19 @@ repository and adds files depending on the
 programing language. and this only with a
 simple command in termianl.
 
-To install, follow the procediments (On linux):
-	
-	git clone https://github.com/Samuel-de-Oliveira/neo-git
-	cd neo-git
-	sudo ./install.sh
+## install
+To install, clone the repository and run the install.sh
+file using this commands:
 
-or you can download from this table:
+```sh	
+git clone https://github.com/Samuel-de-Oliveira/neo-git
+cd neo-git
+sudo ./install.sh
+```
+## How to Use:
+To use you just need to write this in terminal: `ngit
+[--command] ...`.
 
-| System | File |
-|--------|------|
-|All Linux systems|[tar.gz](https://github.com/Samuel-de-Oliveira/neo-git/archive/refs/tags/v1.1.tar.gz)|
+If you want to see all parameters list type `ngit --help`
 
-To use you just need to write this in terminal: `ngit [--command] ...`.
-
-#### to see command list enter `ngit -h` in your terminal
 *<strong>Created by:</strong> Samuel de Oliveira 2021*
