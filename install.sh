@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 clear
-echo "Neo-git version 1.1"
+echo "\033[1mNeo-git version 2.0\033[m"
 echo -e "Estimated space used: 3KB\nAre you sure you want to install? [Y/n]"; read cmd
 clear
 
