@@ -21,48 +21,19 @@ if [ ! -f /usr/bin/git ]; then
 fi
 
 # Here are all functions who is used in parameters.
-push()
+repobuild()
 {	if [ $# -eq 0 ]; then
-		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
-		exit 1
-	fi
-	git add .
-	git commit -m "$1"
-	git push
-}
-commit()
-{	if [ $# -eq 0 ]; then
-		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
-		exit 1
-	fi
-	git add .
-	git commit -m "$1"
-}
-github()
-{	if [ $# -eq 0 ]; then
-		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
-		exit 1
-	fi
-	
-	git clone "https://github.com/$1/$2.git"
-	echo -e "Everything is done!"
-}
-gitlab(){
-	if [ $# -eq 0 ]; then
 		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
 
-	git clone "https://gitlab.com/$1/$2.git"
-	echo -e "Everything is done!"
+	mkdir $1
+
 }
 halp()
-{	echo -e "\nCommand: nvim [--parameter] ...\nThis is the list of parameters from neo-vim:\n"
+{	echo -e "\nCommand: ngit [--parameter] ...\nThis is the list of parameters from neo-vim:\n"
 
-	echo -e "\t \033[34;1m--push or -p \033[m>>: Commit and push the repository in a command (nvim --push '(commit name...)');"
-	echo -e "\t \033[34;1m--commit or -c \033[m>>: Just commit the repository in a command (nvim --commit '(commit name...)');"
-	echo -e "\t \033[34;1m--github or -H \033[m>>: Clone a repository from Github (nvim --github (username...) (repository...))."
-	echo -e "\t \033[34;1m--version or -v \033{m>>: Show version (nvin --version)"
+	echo -e "\t \033[34;1m--version or -v \033[m>>: Show version (nvin --version)"
 	echo -e "\t \033[34;1m--help or -h \033[m>>: Show the help message (nvim --help).\n"
 }
 version()
@@ -78,17 +49,11 @@ fi
 # Parameters:
 case $1 in
 	
-"--push" | "-p") shift; push $@;;
-
-"--commit" | "-c") shift; commit $@;;
+"--create" | "-C") shift; repobuild $@;;
 
 "--help" | "-h") halp;; # I've created "halp" because the command "help" is reserved.
 
 "--version" | "-v") version;;
-
-"--github" | "-H") shift; github $@;;
-
-"--gitlab" | "-L") shift; gitlab $@;;
 
 *) echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit \"ngit --help\" for help.\n";;
 
