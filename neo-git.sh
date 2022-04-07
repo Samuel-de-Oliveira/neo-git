@@ -28,6 +28,14 @@ repobuild()
 	fi
 
 	mkdir $1
+	cd $1
+	git init
+	echo "# $1" >> README.md
+	cp /usr/lib/neo-git/langs/$2/* .
+	git branch -M master
+	git add .
+	git commit -m "Ready..."
+
 
 }
 halp()
