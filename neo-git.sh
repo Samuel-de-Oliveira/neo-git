@@ -26,13 +26,20 @@ repobuild()
 		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
+	if [ ! -d /usr/lib/neo-git/langs/$2/ ]; then
+		echo -e "\n\033[31mLanguage not suported...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
 
+	# create folder and add files
 	mkdir $1
 	cd $1
-	git init
 	echo "# $1" >> README.md
 	cp /usr/lib/neo-git/langs/$2/* .
-	git branch -M master
+
+	# Start git in repository
+	git init
+	git branch -M main
 	git add .
 	git commit -m "Ready..."
 
@@ -41,6 +48,8 @@ repobuild()
 halp()
 {	echo -e "\nCommand: ngit [--parameter] ...\nThis is the list of parameters from neo-vim:\n"
 
+	echo -e "\t \033[34;1m--create or -C \033[m>>: Create a versioned repository (nvim --create [repository's name] [language])"
+	echo -e "\033[34;1m--list or -l \033[m>>: Show the lis of suported languages"
 	echo -e "\t \033[34;1m--version or -v \033[m>>: Show version (nvin --version)"
 	echo -e "\t \033[34;1m--help or -h \033[m>>: Show the help message (nvim --help).\n"
 }
@@ -62,6 +71,8 @@ case $1 in
 "--help" | "-h") halp;; # I've created "halp" because the command "help" is reserved.
 
 "--version" | "-v") version;;
+
+"--list" | "-l") ls /usr/lib/neo-git/langs/
 
 *) echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit \"ngit --help\" for help.\n";;
 
