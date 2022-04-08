@@ -10,7 +10,7 @@
 # from /usr/lib/neo-git/, so if you fond a error  #
 # please report in a github issue		  #
 # 						  #
-# Created by Samuel-de-Oliveira                   #
+# Created by: Samuel-de-Oliveira                  #
 #                                                 #
 #--*-------------------------------------------*--#
 
@@ -54,8 +54,11 @@ filebuild()
 		echo -e "\n\033[31mLanguage not suported...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
+	if [ "$2" == "" ]; then
+		echo -e "\n\033[31mPlease digit a valid name for your file...\033[m\nDigit \"ngit --help\" for help\n"
+	fi
 
-	cp /usr/lib/neo-git/langs/$1/* .
+	cp /usr/lib/neo-git/langs/$1/main.* ./$2
 
 }
 halp()
@@ -63,7 +66,7 @@ halp()
 
 	echo -e "\t \033[34;1m--create or -C \033[m>>: Create a versioned repository (nvim --create [repository's name] [language])"
 	echo -e "\t \033[34;1m--list or -l \033[m>>: Show the lis of suported languages"
-	echo -e "\t \033[34;1m--file or -f \033[m>>: Create a language template (nvim --file [language])"
+	echo -e "\t \033[34;1m--file or -f \033[m>>: Create a language template (nvim --file [language] [file name])"
 	echo -e "\t \033[34;1m--version or -v \033[m>>: Show version (nvin --version)"
 	echo -e "\t \033[34;1m--help or -h \033[m>>: Show the help message (nvim --help).\n"
 }
