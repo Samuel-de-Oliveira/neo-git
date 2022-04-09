@@ -66,6 +66,25 @@ filebuild()
 
 	bash /usr/lib/neo-git/langs/$1/maker.sh file $2
 }
+push()
+{	if [ $# -eq 0 ]; then
+		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
+	while true; do
+	if [ -d .git/ ]; then
+		git add .
+		git commit -m $1
+		git push
+	else
+		if [ $PWD == "/" ]; then
+			echo "\n\033[31mRepoditory git not found, please try in a valid repository!\033[m\n"
+			exit 1
+		fi
+		cd ..
+	fi
+	done
+}
 halp()
 {	echo -e "\nCommand: ngit [--parameter] ...\nThis is the list of parameters from neo-vim:\n"
 
@@ -97,6 +116,8 @@ case $1 in
 "--list" | "-l") ls /usr/lib/neo-git/langs/;;
 
 "--file" | "-f") shift; filebuild $@;;
+
+"--push" | "-P") shift; push $@;;
 
 *) echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit \"ngit --help\" for help.\n";;
 
