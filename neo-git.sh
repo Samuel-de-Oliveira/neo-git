@@ -76,9 +76,10 @@ push()
 		git add .
 		git commit -m $1
 		git push
+		exit 1
 	else
 		if [ $PWD == "/" ]; then
-			echo "\n\033[31mRepoditory git not found, please try in a valid repository!\033[m\n"
+			echo -e "\n\033[31mRepoditory git not found, please try in a valid repository!\033[m\n"
 			exit 1
 		fi
 		cd ..
@@ -91,11 +92,12 @@ halp()
 	echo -e "\t \033[34;1m--create or -C \033[m>>: Create a versioned repository (nvim --create [repository's name] [language template])"
 	echo -e "\t \033[34;1m--list or -l \033[m>>: Show the lis of suported languages"
 	echo -e "\t \033[34;1m--file or -f \033[m>>: Create a language template (nvim --file [language template] [file name])"
+	echo -e "\t \033[34;1m--push or -P \033[m>>: Commit the whole repository and push it (nvim --push [commit name])"
 	echo -e "\t \033[34;1m--version or -v \033[m>>: Show version (nvin --version)"
 	echo -e "\t \033[34;1m--help or -h \033[m>>: Show the help message (nvim --help).\n"
 }
 version()
-{	echo -e "\nNeoGit version: \033[33;1m2.0\033[m. Have no warranty.\nCreated by: Samuel de Oliviera (github: Samuel-de-Oliveira)\n"
+{	echo -e "\nNeoGit version: \033[33;1m1.0\033[m. Have no warranty.\nCreated by: Samuel de Oliviera (github: Samuel-de-Oliveira)\n"
 }
 
 # If the user digit nothing more, will show the help message.
