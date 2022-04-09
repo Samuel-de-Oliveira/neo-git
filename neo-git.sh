@@ -42,7 +42,7 @@ repobuild()
 	echo -e "This is the $1 repository, created by: [Your name]" >> README.md
 	echo -e "\n ## How it work\n[Your program info]"             >> README.md
 	echo -e "\n## Download\n[Download info]"                     >> README.md
-	cp /usr/lib/neo-git/langs/$2/* .
+	bash /usr/lib/neo-git/langs/$2/maker.sh dir
 
 	# Start git in repository
 	(git init
@@ -64,7 +64,7 @@ filebuild()
 		exit 1
 	fi
 
-	cp /usr/lib/neo-git/langs/$1/main.* ./$2
+	bash /usr/lib/neo-git/langs/$1/maker.sh file $2
 }
 halp()
 {	echo -e "\nCommand: ngit [--parameter] ...\nThis is the list of parameters from neo-vim:\n"
