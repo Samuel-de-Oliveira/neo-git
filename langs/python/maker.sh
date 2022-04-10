@@ -10,5 +10,6 @@ if [ $1 == "dir" ]; then
 fi
 
 if [ $1 == "lib" ]; then
-
+	mkdir -p $NAME
+	cp $DIRLOCALE/__init__.py $NAME/
 fi

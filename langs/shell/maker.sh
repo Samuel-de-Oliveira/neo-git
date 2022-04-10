@@ -10,5 +10,5 @@ if [ $1 == "dir" ]; then
 fi
 
 if [ $1 == "lib" ]; then
-
+	echo -e "\nNo library for this language\n"
 fi
