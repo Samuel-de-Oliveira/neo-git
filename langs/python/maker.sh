@@ -8,3 +8,7 @@ fi
 if [ $1 == "dir" ]; then
 	cp $DIRLOCALE/main.py .
 fi
+
+if [ $1 == "lib" ]; then
+
+fi

@@ -9,3 +9,7 @@ if [ $1 == "dir" ]; then
 	cp $DIRLOCALE/main.cpp .
 	cp $DIRLOCALE/makefile .
 fi
+
+if [ $1 == "lib" ]; then
+
+fi
