@@ -67,10 +67,7 @@ filebuild()
 	bash /usr/lib/neo-git/langs/$1/maker.sh file $2
 }
 push()
-{	if [ $# -eq 0 ]; then
-		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
-		exit 1
-	fi
+{	
 	while true; do
 	if [ -d .git/ ]; then
 		git add .
@@ -85,6 +82,34 @@ push()
 		cd ..
 	fi
 	done
+}
+append()
+{	if [ $# -eq 0 ]; then
+		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
+	if [ ! -f $1/maker.sh ]; then
+		echo -e "\n\033[31mRepository don't have maker.sh file...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
+	if [ ! $USER == "root" ]; then
+		echo -e "\n\033[31mYou need root to append a template...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
+	
+	cp -rf $1 /usr/lib/neo-git/langs/
+}
+purge()
+{	if [ $# -eq 0 ]; then
+		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
+	if [ ! $USER == "root" ]; then
+		echo -e "\n\033[31mYou need root to append a template...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
+
+	rm -rf /usr/lib/neo-git/langs/$1
 }
 halp()
 {	echo -e "\nCommand: ngit [--parameter] ...\nThis is the list of parameters from neo-vim:\n"
@@ -116,6 +141,10 @@ case $1 in
 "--version" | "-v") version;;
 
 "--list" | "-l") ls /usr/lib/neo-git/langs/;;
+
+"--append" | "-a") shift; append $@;;
+
+"--purge" | "-p") shift; purge $@;;
 
 "--file" | "-f") shift; filebuild $@;;
 
