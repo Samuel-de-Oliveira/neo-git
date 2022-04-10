@@ -66,6 +66,22 @@ filebuild()
 
 	bash /usr/lib/neo-git/langs/$1/maker.sh file $2
 }
+libbuild()
+{	if [ $# -eq 0 ]; then
+		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
+	if [ ! -d /usr/lib/neo-git/langs/$1/ ]; then
+		echo -e "\n\033[31mLanguage not suported...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
+	if [ "$2" == "" ]; then
+		echo -e "\n\033[31mPlease digit a valid name for your library...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
+
+	bash /usr/lib/neo-git/langs/$1/maker.sh lib $2
+}
 push()
 {	
 	while true; do
@@ -151,6 +167,8 @@ case $1 in
 "--file" | "-f") shift; filebuild $@;;
 
 "--push" | "-P") shift; push $*;;
+
+"--library" | "-L") shift; libbuild;;
 
 *) echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit \"ngit --help\" for help.\n";;
 
