@@ -2,7 +2,7 @@
 
 clear
 echo -e "\033[1mNeo-git version 1.0\033[m"
-echo -e "Estimated space used: 4KB\nAre you sure you want to install? [Y/n]"; read cmd
+echo -e "Estimated space used: 7KB\nAre you sure you want to install? [Y/n]"; read cmd
 clear
 
 if [ $cmd == 'y' ] || [ $cmd == 'Y' ]; then
