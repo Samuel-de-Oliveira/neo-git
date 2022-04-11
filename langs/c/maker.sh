@@ -11,6 +11,10 @@ if [ $1 == "dir" ]; then
 fi
 
 if [ $1 == "lib" ]; then
-	mkdir $NAME
-	cp $DIRLOCALE/main.h $NAME
+	mkdir Headers
+	echo -e "#ifndef "$NAME"_H_INCLUDED"                       >> Headers/$NAME.h
+	echo -e "#define "$NAME"_H_INCLUDED"                       >> Headers/$NAME.h
+	echo -e "#include <stdio.h>"                               >> Headers/$NAME.h
+	echo -e "\nvoid hello() {\n\tprintf(\"Hello, world\");\n}" >> Headers/$NAME.h
+	echo -e "\n#endif"                		           >> Headers/$NAME.h
 fi
