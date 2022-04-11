@@ -11,5 +11,6 @@ if [ $1 == "dir" ]; then
 fi
 
 if [ $1 == "lib" ]; then
-
+	mkdir $NAME
+	cp $DIRLOCALE/main.h $NAME
 fi

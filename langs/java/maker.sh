@@ -9,6 +9,6 @@ if [ $1 == "dir" ]; then
 	cp $DIRLOCALE/main.java .
 fi
 
-if [ $1 == "lib" ]; then
-
+if [ $1 == "lib" ]; then	
+	echo -e "\nNo library for this language\n"
 fi
