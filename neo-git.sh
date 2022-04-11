@@ -1,18 +1,23 @@
 #!/usr/bin/env bash
 
-#--*----------- Neo-git Source Code -----------*--#
-#                                                 #
-# This code is created to make easier the push    #
-# and the commit of Git.			  #
-#                                                 #
-# Warning: This is the main file, the entire	  #
-# plugin works here, the program only copy file   #
-# from /usr/lib/neo-git/, so if you fond a error  #
-# please report in a github issue		  #
-# 						  #
-# Created by: Samuel-de-Oliveira                  #
-#                                                 #
-#--*-------------------------------------------*--#
+#--*------------- Neo-git Source Code -------------*--#
+#                                                     #
+# This code is created to make easier the push        #
+# and the commit of Git.			      #
+#                                                     #
+# Warning: This is the main file, the entire plugin   #
+# works here, the program only verify the files from  #
+# /usr/lib/neo-git/, so if you fond a error please    #
+# report in a github issue. To see all commands type  #
+# "ngit --help" and if you want to learn to how use   #
+# plugin check the github repository:		      #
+# https://github.com/Samuel-de-Oliveira/neo-git	      #
+# 						      #
+# Created by: Samuel-de-Oliveira                      #
+# Thanks to contribuitors: None			      #
+# This software have no warranty		      #
+#                                                     #
+#--*-----------------------------------------------*--#
 
 # Check if git is installed.
 if [ ! -f /usr/bin/git ]; then
@@ -63,7 +68,8 @@ filebuild()
 		echo -e "\n\033[31mPlease digit a valid name for your file...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
-
+	
+	# Create files
 	bash /usr/lib/neo-git/langs/$1/maker.sh file $2
 }
 libbuild()
@@ -79,15 +85,15 @@ libbuild()
 		echo -e "\n\033[31mPlease digit a valid name for your library...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
-
+	
+	# create library
 	bash /usr/lib/neo-git/langs/$1/maker.sh lib $2
 }
 push()
-{	
-	while true; do
+{	while true; do
 	if [ -d .git/ ]; then
 		git add .
-		git commit -m $1
+		git commit -m "$1"
 		git push
 		exit 1
 	else
@@ -166,7 +172,7 @@ case $1 in
 
 "--file" | "-f") shift; filebuild $@;;
 
-"--push" | "-P") shift; push $*;;
+"--push" | "-P") shift; push "$*";;
 
 "--library" | "-L") shift; libbuild;;
 
