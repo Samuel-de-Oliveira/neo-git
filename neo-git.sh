@@ -174,7 +174,7 @@ case $1 in
 
 "--push" | "-P") shift; push "$*";;
 
-"--library" | "-L") shift; libbuild;;
+"--library" | "-L") shift; libbuild $*;;
 
 *) echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit \"ngit --help\" for help.\n";;
 
