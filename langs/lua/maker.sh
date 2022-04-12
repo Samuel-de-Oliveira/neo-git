@@ -2,7 +2,7 @@ NAME=$2
 DIRLOCALE=$(dirname -- $(readlink -fn -- "$0"))
 
 if [ $1 == "file" ]; then
-	cp $DIRLOCALE/main.lua ./$NAME
+	cp $DIRLOCALE/main.lua ./$NAME.lua
 fi
 
 if [ $1 == "dir" ]; then
