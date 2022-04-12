@@ -39,6 +39,10 @@ repobuild()
 		echo -e "\n\033[31mPlease digit a valid name for tamplate...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
+	if [ -d $2 ]; then
+		echo -e "\n\033[31m$2 directory exist, please remove to proced...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
 
 	# create folder and add files
 	mkdir $1
