@@ -24,11 +24,21 @@ NAME=$2
 DIRLOCALE=$(dirname -- $(readlink -fn -- "$0"))
 
 if [ $1 == "file" ]; then
+	if [ -f $NAME ]; then
+		echo -e "File $NAME exist, please remove to proced..."
+	fi
 	# Here you write the file to copy using "ngit -f"
 fi
 
 if [ $1 == "dir" ]; then
 	# Here you write the files to copy using "ngit -C"
+fi
+
+fi [ $1 == "lib" ]; then
+	if [ -f $NAME ]; then
+		echo -e "File $NAME exist, please remove to proced..."
+	fi
+	# here you write the files to copy using "ngit -L"
 fi
 ```
 ### Example
