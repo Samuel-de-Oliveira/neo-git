@@ -4,6 +4,8 @@ Neo git is a plugin/software that work with git. This software creates templates
 
 If you found a bug, a missing programing language or a syntax or ortografic error, the project is open for pull requests and issues, this will help me a lot and I will be so glad!
 
+> :warning: The software is tested only on Linux, if it working on Mac OS please tell me in a issue
+
 ## Install
 
 To install, clone the repository and run the install.sh file using this commands:
@@ -72,7 +74,7 @@ fi [ $1 == "lib" ]; then
 fi
 ```
 
-> Note: is recommeded to known about shell scripts handling to manage templates creation.
+> ℹ️ Note: is recommeded to known about shell scripts handling to manage templates creation.
 
 Then, after configure your template, run (with root) `ngit -a (directory)` and it will be added to the application.
 
