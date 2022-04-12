@@ -1,9 +1,16 @@
 # neo-git
+Neo git is a plugin/software that work with git, the
+software create templates for a determined language
+with a simple command, perfect for people that use
+Vim or VS code, it can auto generate git repositories,
+script files and libraries. The plugin too can add a
+template that you create (click [here](#add-template)
+for a tutorial) and remove one if you don't like it.
 
-Neo-Git is a plugin for Git, it creates a git
-repository and adds files depending on the
-programing language. and this only with a
-simple command in termianl.
+If you see a bug, a missing programing language or a
+syntax or ortografic error, the project is open for
+pull requests and issues, this will help me a lot and
+I will be so glad!
 
 ## install
 To install, clone the repository and run the install.sh
@@ -14,10 +21,47 @@ git clone https://github.com/Samuel-de-Oliveira/neo-git
 cd neo-git
 sudo ./install.sh
 ```
-## How to create a template:
-Create a repository in /usr/lib/neo-git/langs/ with the
-language that you want, after this add files of the language,
-after this add a file named `maker.sh` and write this:
+
+## Usage
+The prograam have 3 main parameters: `ngit -f`, `ngit -C`
+and `ngit -L`. (for examples I will use C++ as base for
+templates)
+
+**`ngit -f`**: (ngit -f "programing language" "file name")
+Create a file of a determined language, for example if I
+want to create a C++ file with name of "main.cpp":
+
+```sh
+ngit -f cpp main
+```
+
+**`ngit -C`** (ngit -C "Repository's name" "programing language")
+Start a project repository with git of a determined language, for
+example if I want to create a C++ project with name of "project":
+
+```
+ngit -C project cpp
+```
+
+**`ngit -L`** (ngit -L "programing language" "file name")
+Create a library of a determined language, for example if
+I want to create a C++ library with name of "book.h":
+
+```
+ngit -L cpp book
+```
+
+> To see all languages suported type `ngit -l`
+
+> To see list of all commands type `ngit -h`
+
+> :warning: If don't have your language template give me a
+pull request and I will see if is valid.
+
+## add template:
+Create a repository with the language name, after this add
+files of the language and add a file named `maker.sh` with
+this script:
 
 ```sh
 NAME=$2
@@ -41,12 +85,11 @@ fi [ $1 == "lib" ]; then
 	# here you write the files to copy using "ngit -L"
 fi
 ```
-### Example
 
-## How to Use:
-To use you just need to write this in terminal: `ngit
-[--command] ...`.
+> You probably need to understand shell script to create :P
 
-If you want to see all parameters list type `ngit --help`
+so after configure your template type (with root) `ngit -a (directory)`
+and it will be added. So to check if is added type `ngit -l` to see and
+to remove `ngit -p (language name)`.
 
-*<strong>Created by:</strong> Samuel de Oliveira 2021*
+*<strong>Created by:</strong> Samuel de Oliveira 2022*
