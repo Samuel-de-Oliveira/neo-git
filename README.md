@@ -54,6 +54,7 @@ DIRLOCALE=$(dirname -- $(readlink -fn -- "$0"))
 if [ $1 == "file" ]; then
 	if [ -f $NAME ]; then
 		echo -e "File $NAME exist, please remove to proced..."
+		exit 1
 	fi
 	# Here you write the file to copy using "ngit -f"
 fi
@@ -65,6 +66,7 @@ fi
 fi [ $1 == "lib" ]; then
 	if [ -f $NAME ]; then
 		echo -e "File $NAME exist, please remove to proced..."
+		exit 1
 	fi
 	# here you write the files to copy using "ngit -L"
 fi
