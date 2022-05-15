@@ -21,7 +21,7 @@
 
 # Check if git is installed.
 if [ ! -f /usr/bin/git ]; then
-	echo -e "\n\033[31;1mThe git is not found\033[m, please install it to plugin works correctly"
+	echo -e "\n\033[31;1mThe Git is not found\033[m, please install it to plugin works correctly\n"
 	exit 1
 fi
 
