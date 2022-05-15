@@ -23,7 +23,8 @@ if [ $1 == "lib" ]; then
 
 	echo -e "#ifndef "$NAME"_H_INCLUDED"      >> $NAME.h
 	echo -e "#define "$NAME"_H_INCLUDED"      >> $NAME.h
-	echo -e "#include <stdio.h>\n"            >> $NAME.h
+	echo -e "#include <stdio.h>"              >> $NAME.h
+        echo -e "#include <stdlib.h>\n"           >> $NAME.h
 	echo -e "void hello() {"                  >> $NAME.h
 	echo -e "\tprintf(\"Hello, world!\");\n}" >> $NAME.h
 	echo -e "\n#endif"                        >> $NAME.h
