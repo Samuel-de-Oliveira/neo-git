@@ -19,6 +19,13 @@
 #                                                     #
 #--*-----------------------------------------------*--#
 
+#--*---------- Suported languages templates ----------*--#
+#                                                        #
+# Suported languages: C, C++, Java, Lua, Nodejs, Python, #
+# Shell script, Web template (HTML, CSS, Javascript).    #
+#                                                        #
+#--*--------------------------------------------------*--#
+
 # Check if git is installed.
 if [ ! -f /usr/bin/git ]; then
 	echo -e "\n\033[31;1mThe Git is not found\033[m, please install it to plugin works correctly\n"
