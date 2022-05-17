@@ -12,6 +12,7 @@ fi
 
 if [ $1 == "dir" ]; then
 	cp $DIRLOCALE/* .
+        rm -f maker.sh
 fi
 
 if [ $1 == "lib" ]; then
