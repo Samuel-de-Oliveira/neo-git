@@ -1,4 +1,4 @@
 def hello():
     print("Hello, world!")
 
-if __name__ == "__main__": print("library file...")
+if __name__ == "__main__": hello()
