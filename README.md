@@ -65,7 +65,7 @@ if [ $1 == "dir" ]; then
 	# Here you write the files to copy using "ngit -C"
 fi
 
-fi [ $1 == "lib" ]; then
+if [ $1 == "lib" ]; then
 	if [ -f $NAME ]; then
 		echo -e "File $NAME exist, please remove to proced..."
 		exit 1
