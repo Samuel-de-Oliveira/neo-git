@@ -11,6 +11,7 @@ fi
 
 if [ $1 == "dir" ]; then
 	cp $DIRLOCALE/main.go .
+	cp $DIRLOCALE/makefile .
 fi
 
 if [ $1 == "lib" ]; then
