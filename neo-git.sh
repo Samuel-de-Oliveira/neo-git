@@ -148,14 +148,14 @@ purge()
 halp()
 {	echo -e "\nCommand: ngit [--parameter] ...\nThis is the list of parameters from neo-vim:\n"
 
-	echo -e "\t \033[34;1m--create or -C \033[m>>: Create a versioned repository (nvim --create [repository's name] [language template])"
-	echo -e "\t \033[34;1m--list or -l \033[m>>: Show the lis of suported languages"
-	echo -e "\t \033[34;1m--file or -f \033[m>>: Create a language template (nvim --file [language template] [file name])"
-	echo -e "\t \033[34;1m--append or -a \033[m>>: append a template (sudo nvim --append [template folder])"
-	echo -e "\t \033[34;1m--purge or -p \033[m>>: remove a template (sudo nvim --purge [template])"
-	echo -e "\t \033[34;1m--push or -P \033[m>>: Commit the whole repository and push it (nvim --push [commit name])"
-	echo -e "\t \033[34;1m--version or -v \033[m>>: Show version (nvin --version)"
-	echo -e "\t \033[34;1m--help or -h \033[m>>: Show the help message (nvim --help).\n"
+	echo -e "\t \033[34;1m--create or -C \033[m>>: Create a versioned repository (ngit --create [repository's name] [language template]);"
+	echo -e "\t \033[34;1m--list or -l \033[m>>: Show the list of all suported languages (ngit --list);"
+	echo -e "\t \033[34;1m--file or -f \033[m>>: Create a language template (ngit --file [language template] [file name]);"
+	echo -e "\t \033[34;1m--append or -a \033[m>>: append a template (sudo ngit --append [template folder]);"
+	echo -e "\t \033[34;1m--purge or -p \033[m>>: remove a template (sudo ngit --purge [template]);"
+	echo -e "\t \033[34;1m--push or -P \033[m>>: Commit the whole repository and push it (ngit --push [commit name]);"
+	echo -e "\t \033[34;1m--version or -v \033[m>>: Show version (ngit --version);"
+	echo -e "\t \033[34;1m--help or -h \033[m>>: Show the help message (ngit --help).\n"
 }
 version()
 {	echo -e "\nNeoGit version: \033[33;1m1.0\033[m. Have no warranty.\nCreated by: Samuel de Oliviera (github: Samuel-de-Oliveira)\n"
