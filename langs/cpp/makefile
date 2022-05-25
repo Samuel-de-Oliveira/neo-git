@@ -1,10 +1,10 @@
-TARGET = a.out
-FILE   = main.cpp
-CXX    = /usr/bin/g++
+TARGET   = a.out
+FILE     = main.cpp
+COMPILER = /usr/bin/g++
 
 .PHONY: all
 all:
-	$(CXX) $(FILE) -o $(TARGET)
+	$(COMPILER) $(FILE) -o $(TARGET)
 
 .PHONY: clean
 clean:
