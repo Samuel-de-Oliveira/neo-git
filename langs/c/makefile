@@ -1,10 +1,10 @@
-TARGET = a.out
-FILE   = main.c
-CXX    = /usr/bin/gcc
+TARGET   = a.out
+FILE     = main.c
+COMPILER = /usr/bin/gcc
 
 .PHONY: all
 all:
-	$(CXX) $(FILE) -o $(TARGET)
+	$(COMPILER) $(FILE) -o $(TARGET)
 
 .PHONY: clean
 clean:
