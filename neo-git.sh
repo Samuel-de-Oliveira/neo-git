@@ -94,7 +94,7 @@ libbuild()
 		exit 1
 	fi
 	if [ "$2" == "" ]; then
-		echo -e "\n\033[31mPlease digit a valid name for your library...\033[m\nDigit \"ngit --help\" for help\n"
+		echo -e "\n\033[31mPlease digit a valid name to create your library...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
 	
@@ -105,12 +105,12 @@ push()
 {	while true; do
 	if [ -d .git/ ]; then
 		git add .
-		git commit -m "$1"
+		git commit -m "$1" &> /dev/null
 		git push
 		exit 1
 	else
 		if [ $PWD == "/" ]; then
-			echo -e "\n\033[31mRepoditory git not found, please try in a valid repository!\033[m\n"
+			echo -e "\n\033[31mThis repository doesn't have Git, please try in a valid repository!\033[m\n"
 			exit 1
 		fi
 		cd ..
@@ -122,8 +122,8 @@ append()
 		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
-        if [ ! "$(file $1)" == "$1/: directory" ]; then
-                echo -e "\n\033[31mThis isn't a repository...\033[m\nDigit \"ngit --help\" for help\n"
+        if [ ! -d $1 ]; then
+                echo -e "\n\033[31mThis directory doesn't exist...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
         fi
 	if [ ! -f $1/maker.sh ]; then
