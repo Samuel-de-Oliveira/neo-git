@@ -122,6 +122,10 @@ append()
 		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
+        if [ ! "$(file $1)" == "$1/: directory" ]; then
+                echo -e "\n\033[31mThis isn't a repository...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+        fi
 	if [ ! -f $1/maker.sh ]; then
 		echo -e "\n\033[31mRepository don't have maker.sh file...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
