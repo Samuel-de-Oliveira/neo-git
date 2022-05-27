@@ -47,7 +47,7 @@ repobuild()
 		echo -e "\n\033[31mPlease digit a valid name for tamplate...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
-	if [ -d $2 ]; then
+	if [ -d $1 ]; then
 		echo -e "\n\033[31m$2 directory exist, please remove to proced...\033[m\nDigit \"ngit --help\" for help\n"
 		exit 1
 	fi
@@ -55,10 +55,10 @@ repobuild()
 	# create folder and add files
 	mkdir $1
 	cd $1
-	echo -e "# $1"                                               >> README.md
-	echo -e "This is the $1 repository, created by: [Your name]" >> README.md
-	echo -e "\n ## How it work\n[Your program info]"             >> README.md
-	echo -e "\n## Download\n[Download info]"                     >> README.md
+	echo -e "# $1"                                                      >> README.md
+	echo -e "This is the $1 repository, created by: <!-- Your name -->" >> README.md
+	echo -e "\n ## How it work\n<!-- Your program info. -->"            >> README.md
+	echo -e "\n## Download\n<!-- Download info. -->"                    >> README.md
 	bash /usr/lib/neo-git/langs/$2/maker.sh dir
 
 	# Start git in repository
