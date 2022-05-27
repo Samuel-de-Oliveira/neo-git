@@ -12,6 +12,7 @@ fi
 
 if [ $1 == "dir" ]; then
 	cp $DIRLOCALE/main.py .
+	touch requirements.txt
 fi
 
 if [ $1 == "lib" ]; then
