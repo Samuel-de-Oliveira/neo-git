@@ -13,6 +13,9 @@ fi
 if [ $1 == "dir" ]; then
 	cp $DIRLOCALE/main.py .
 	touch requirements.txt
+
+        echo "__cache__/" >> .gitignore
+        echo "__cache__" >> .gitignore
 fi
 
 if [ $1 == "lib" ]; then
