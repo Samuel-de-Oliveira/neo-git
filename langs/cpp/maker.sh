@@ -13,6 +13,8 @@ fi
 if [ $1 == "dir" ]; then
 	cp $DIRLOCALE/main.cpp .
 	cp $DIRLOCALE/makefile .
+
+        echo "a.out" >> .gitignore
 fi
 
 if [ $1 == "lib" ]; then
