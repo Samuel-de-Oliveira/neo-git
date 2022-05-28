@@ -55,10 +55,14 @@ repobuild()
 	# create folder and add files
 	mkdir $1
 	cd $1
-	echo -e "# $1"                                                      >> README.md
-	echo -e "This is the $1 repository, created by: <!-- Your name -->" >> README.md
-	echo -e "\n ## How it work\n<!-- Your program info. -->"            >> README.md
-	echo -e "\n## Download\n<!-- Download info. -->"                    >> README.md
+	echo -e "# $1"                                           >> README.md
+        echo -e "Project writed with $2 language"                >> README.md
+	echo -e "$1 repository, created by: <!-- Your name -->"  >> README.md
+	echo -e "\n ## How it work\n<!-- Your program info. -->" >> README.md
+	echo -e "\n## Download\n<!-- Download info. -->"         >> README.md
+
+        touch .gitignore .
+
 	bash /usr/lib/neo-git/langs/$2/maker.sh dir
 
 	# Start git in repository
