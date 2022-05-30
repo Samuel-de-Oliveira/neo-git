@@ -12,6 +12,8 @@ fi
 if [ $1 == "dir" ]; then
 	cp $DIRLOCALE/main.go .
 	cp $DIRLOCALE/makefile .
+
+        echo "main" >> .gitignore
 fi
 
 if [ $1 == "lib" ]; then
