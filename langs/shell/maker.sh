@@ -15,5 +15,10 @@ if [ $1 == "dir" ]; then
 fi
 
 if [ $1 == "lib" ]; then
-	echo -e "\nNo library for this language\n"
+	if [ -f $NAME.sh ]; then
+		echo "The file $NAME.sh exist, please remove to proced"
+		exit 1
+	fi
+        
+        cp $DIRLOCALE/lib.sh ./$NAME.sh
 fi
