@@ -29,6 +29,7 @@ if [ $cmd == 'y' ] || [ $cmd == 'Y' ]; then
 
 	echo "Moving the executer file to /usr/bin/..."
 	sudo cp neo-git.sh /usr/bin/ngit
+        sudo chmod a+rwx /usr/bin/ngit
 	
 	echo -e "\nThe installing is terminated!"
 	echo -e "\033[34;1mPress return to exit...\033[m"; read
