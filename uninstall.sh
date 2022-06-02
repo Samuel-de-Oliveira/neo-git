@@ -2,6 +2,7 @@
 # -*--- Neo Git uninstaller source code ---*- #
 
 clear
+echo -e "\033[1mNeo Git uninstaller\033[m"
 echo -e "Everything into /usr/lib/neo-git/ will be removed."
 echo -e "Are you sure you want to uninstall? [Y/n]"; read cmd
 clear
