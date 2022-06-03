@@ -12,6 +12,7 @@ fi
 
 if [ $1 == "dir" ]; then
 	cp $DIRLOCALE/main.lua .
+        echo "luac.out" >> .gitignore
 fi
 
 if [ $1 == "lib" ]; then
