@@ -21,7 +21,7 @@
 
 #--*---------- Suported languages templates ----------*--#
 #                                                        #
-# Suported languages: C, C++, Go, Java, Lua, Nodejs,     #
+# Suported languages: C, C++, Go, Java, Lua, Nodejs, PHP #
 # Python, Shell script, Web template (HTML, CSS,	 #
 # Javascript).                                           #
 #                                                        #
