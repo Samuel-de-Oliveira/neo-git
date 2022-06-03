@@ -15,7 +15,8 @@ if [ $1 == "dir" ]; then
 	touch requirements.txt
 
         echo "__cache__/" >> .gitignore
-        echo "__cache__" >> .gitignore
+        echo "__cache__"  >> .gitignore
+	echo "*.pyc"      >> .gitignore
 fi
 
 if [ $1 == "lib" ]; then
