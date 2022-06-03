@@ -19,13 +19,13 @@
 #                                                     #
 #--*-----------------------------------------------*--#
 
-#--*---------- Suported languages templates ----------*--#
-#                                                        #
-# Suported languages: C, C++, Go, Java, Lua, Nodejs, PHP #
-# Python, Shell script, Web template (HTML, CSS,	 #
-# Javascript).                                           #
-#                                                        #
-#--*--------------------------------------------------*--#
+#--*----------- Suported languages templates -----------*--#
+#                                                          #
+# Suported languages: C, C++, Dart, Go, Java, Lua, Nodejs, #
+# PHP, Python, Shell script, Web template (HTML, CSS,      #
+# Javascript).                                             #
+#                                                          #
+#--*----------------------------------------------------*--#
 
 # Check if git is installed.
 if [ ! -f /usr/bin/git ]; then
