@@ -1,6 +1,6 @@
 # neo-git
 
-Neo git is a plugin/software that work with git. This software creates templates for a determined language with a simple command, perfect for those who uses Vim or VS code. It can auto generate git repositories, script files and libraries. The plugin also can add a template created by you (click [here](#add-template) for a tutorial) and/or remove one if you don't like it.
+Neo git is a plugin/software that work with git. This software creates templates for a determined language with a simple command, perfect for those who uses Vim or VS code. It can auto generate git repositories, script files and libraries. The plugin also can add a template created by you (click [here](#add-a-template) for a tutorial) and/or remove one if you don't like it.
 
 If you found a bug, a missing programing language or a syntax or ortografic error, the project is open for pull requests and issues, this will help me a lot and I will be so glad!
 
@@ -79,5 +79,12 @@ fi
 Then, after configure your template, run (with root) `ngit -a (directory)` and it will be added to the application.
 
 Finally, to check if it was added run `ngit -l` and to remove run `ngit -p (language name)`.
+
+## Can I contribute?
+Sure! This repository is free for pull requests and issues. 😉
+
+If you create a language template but you want to make this official of this repository, please copy your template forder into `langs` directory and create a pull request.
+
+> ℹ️ languesges incompletes: Obviosly I don't know very language, beacause this i need help to write templates in the follow languages: Dart, Go, Nodejs, Java and PHP.
 
 *<strong>Created by:</strong> Samuel de Oliveira 2022*
