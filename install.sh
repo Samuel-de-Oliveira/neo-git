@@ -2,14 +2,14 @@
 # -*--- Neo Git installer source code ---*- #
 
 clear
-echo -e "\033[1mNeo-git version 1.0\033[m"
+echo -e "\033[1mNeo-git version 1.0.1\033[m"
 echo -e "The program will create a folder in /usr/lib/ and add the shell file in /usr/bin/."
-echo -e "Estimated space used: 9.5KB\nAre you sure you want to install? [Y/n]"; read cmd
+echo -e "Estimated space used: 10.5KB\nAre you sure you want to install? [Y/n]"; read cmd
 clear
 
 if [ $cmd == 'y' ] || [ $cmd == 'Y' ]; then
 
-	echo -e "The program is installing!\n"
+	echo -e "The program is installing! This not will take long...\n"
 	
 	echo -e "Check if the Git is intalled..."
 	if [ ! -f /usr/bin/git ]; then
