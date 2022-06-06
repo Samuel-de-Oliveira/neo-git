@@ -15,6 +15,7 @@
 # 						      #
 # Created by: Samuel-de-Oliveira                      #
 # Thanks to contribuitors: None			      #
+# Version: 1.0.1                                      #
 # This software have no warranty		      #
 #                                                     #
 #--*-----------------------------------------------*--#
