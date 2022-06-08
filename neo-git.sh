@@ -122,6 +122,18 @@ push()
 	fi
 	done
 }
+editrepo()
+{       if [ $# -eq 0 ]; then
+		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+	fi
+        if [ ! -d /usr/lib/neo-git/langs/$1/ ]
+                echo -e "\n\033[mThe repository $1 doesn't exist...\033[m\nDigit \"ngit --help\" for help\n"
+		exit 1
+        fi
+
+        cp -rf /usr/lib/neo-git/langs/$1/ .
+}
 append()
 {	if [ $# -eq 0 ]; then
 		echo -e "\n\033[31mMissing arguments...\033[m\nDigit \"ngit --help\" for help\n"
@@ -163,6 +175,7 @@ halp()
 	echo -e "\t \033[34;1m--append or -a \033[m>>: append a template (sudo ngit --append [template folder]);"
 	echo -e "\t \033[34;1m--purge or -p \033[m>>: remove a template (sudo ngit --purge [template]);"
 	echo -e "\t \033[34;1m--push or -P \033[m>>: Commit the whole repository and push it (ngit --push [commit name]);"
+        echo -e "\t \033[34;1m--edit or -E \033[m>>: Copy a template for editing (ngit --edit [template name]);"
 	echo -e "\t \033[34;1m--version or -v \033[m>>: Show version (ngit --version);"
 	echo -e "\t \033[34;1m--help or -h \033[m>>: Show the help message (ngit --help).\n"
 }
@@ -196,6 +209,8 @@ case $1 in
 "--push" | "-P") shift; push "$*";;
 
 "--library" | "-L") shift; libbuild $*;;
+
+"--edit" | "-E") shift; editrepo $*;;
 
 *) echo -e "\n\033[31mUps... Maybe you digit something wrong.\033[m\nDigit \"ngit --help\" for help.\n";;
 
